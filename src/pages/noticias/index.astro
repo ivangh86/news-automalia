@@ -8,7 +8,7 @@ const posts = (await getCollection('noticias', e => !e.data.draft))
 <BaseLayout title="Noticias" description="Novedades diarias sobre Claude, Claude Code y Anthropic — filtradas y explicadas." section="noticias">
   <div class="hero" style="margin-bottom:32px">
     <div class="hero-label">Noticias</div>
-    <h1 style="font-size:clamp(2rem,5vw,3.5rem);margin:0 0 12px;color:#fff;letter-spacing:-0.05em">Novedades sobre <em>Claude</em></h1>
+    <h1 style="font-size:clamp(2rem,5vw,3.5rem);margin:0 0 12px;">Novedades sobre <em>Claude</em></h1>
     <p class="lead" style="margin:0">Actualizaciones de Anthropic, lanzamientos y cambios en Claude Code. Sin spam, solo lo que importa.</p>
   </div>
   <div class="card-list">
