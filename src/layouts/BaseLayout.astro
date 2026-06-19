@@ -193,38 +193,53 @@ const {
       }
 
       /* ── Hero ── */
+      :root { --grid-line: color-mix(in srgb, var(--ink) 6%, transparent); }
+      [data-theme="dark"] { --grid-line: color-mix(in srgb, var(--ink) 9%, transparent); }
+
       .hero {
         border: 1px solid var(--line);
-        border-radius: 20px;
-        padding: clamp(28px, 5vw, 60px);
-        background: linear-gradient(135deg, var(--accent-soft), var(--bg-soft) 60%);
+        border-radius: 14px;
+        padding: clamp(32px, 5vw, 64px);
+        background-color: var(--bg-soft);
+        background-image:
+          linear-gradient(var(--grid-line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+        background-size: 40px 40px;
+        position: relative;
+        overflow: hidden;
         margin-bottom: 32px;
       }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at top left, var(--accent-soft), transparent 65%);
+        pointer-events: none;
+      }
+      .hero > * { position: relative; }
       .hero-label {
         font-family: var(--font-mono);
         font-size: 11px;
         font-weight: 500;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: var(--accent-ink);
-        margin-bottom: 18px;
+        color: var(--accent);
+        margin-bottom: 20px;
         display: flex;
         align-items: center;
         gap: 6px;
       }
-      [data-theme="dark"] .hero-label { color: var(--accent); }
       .hero-label::before { content: "●"; font-size: 8px; }
       .hero h1 {
         font-family: var(--font-serif);
         font-weight: 500;
-        font-size: clamp(2.2rem, 6vw, 4.5rem);
+        font-size: clamp(2.4rem, 6vw, 4.8rem);
         line-height: 1.0;
         margin: 0 0 20px;
         letter-spacing: -0.03em;
         color: var(--ink);
       }
-      .hero h1 em { font-style: normal; color: var(--accent-ink); }
-      [data-theme="dark"] .hero h1 em { color: var(--accent); }
+      .hero h1 em { font-style: normal; color: var(--accent); }
       .lead {
         font-family: var(--font-serif);
         font-style: italic;
@@ -232,12 +247,19 @@ const {
         color: var(--ink-3);
         max-width: 680px;
         line-height: 1.55;
-        margin: 0 0 24px;
+        margin: 0 0 28px;
       }
       .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
       /* ── Section headers ── */
-      .section-header { margin: 48px 0 20px; }
+      .section-header {
+        margin: 56px 0 20px;
+        padding-bottom: 14px;
+        border-bottom: 1px dashed var(--line);
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
       .section-label {
         font-family: var(--font-mono);
         font-size: 11px;
@@ -256,6 +278,13 @@ const {
         margin: 0;
         color: var(--ink);
       }
+      .section-header h2::before {
+        content: "## ";
+        font-family: var(--font-mono);
+        font-size: 14px;
+        color: var(--accent);
+        font-weight: 400;
+      }
 
       /* ── Cards ── */
       .card-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
@@ -265,11 +294,11 @@ const {
         border: 1px solid var(--line);
         border-radius: 14px;
         padding: 22px;
-        background: var(--bg);
-        transition: border-color 0.15s, transform 0.15s;
+        background: var(--bg-soft);
+        transition: border-color 0.15s, transform 0.15s, background 0.15s;
         box-shadow: var(--shadow-card);
       }
-      .card:hover { border-color: var(--ink-3); transform: translateY(-2px); }
+      .card:hover { border-color: var(--muted-2); transform: translateY(-2px); background: var(--bg-muted); }
       .card h2, .card h3 {
         font-family: var(--font-serif);
         font-weight: 500;
@@ -466,7 +495,7 @@ const {
     </style>
     <script is:inline>
       (function () {
-        const t = localStorage.getItem('ch:theme') || 'light';
+        const t = localStorage.getItem('ch:theme') || 'dark';
         document.documentElement.dataset.theme = t;
       })();
     </script>
