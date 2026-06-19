@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Newsletter" description="Suscríbete a The Claude Hub para recibir lo mejor sobre Claude cada semana." section="newsletter">
+  <div class="hero" style="margin-bottom:32px">
+    <div class="hero-label">Newsletter</div>
+    <h1 style="font-size:clamp(2rem,5vw,3.5rem);margin:0 0 12px;color:#fff;letter-spacing:-0.05em">Lo mejor de Claude,<br/><em>en tu correo</em></h1>
+    <p class="lead" style="margin:0 0 24px">Resumen semanal con las novedades más importantes de Claude y Claude Code, los mejores tutoriales de la semana y actualizaciones del curso.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="/rss.xml">Suscribirse por RSS</a>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:16px">
+    <div class="card-meta"><span class="tag">Próximamente</span></div>
+    <h3 style="margin:0 0 8px;color:#fff">Newsletter por email</h3>
+    <p>Estamos preparando una newsletter semanal con el mejor contenido sobre Claude. Por ahora, la forma más rápida de estar al día es el RSS.</p>
+    <p style="margin-top:12px"><a href="/rss.xml" class="button button-secondary">Abrir RSS →</a></p>
+  </div>
+
+  <div class="card">
+    <div class="card-meta"><span class="tag">Qué incluirá</span></div>
+    <h3 style="margin:0 0 8px;color:#fff">Formato de la newsletter</h3>
+    <ul style="color:#a3a3a3;line-height:1.8;margin:0;padding-left:20px">
+      <li>3-5 noticias de la semana sobre Claude y Anthropic</li>
+      <li>Tutorial destacado con instrucciones prácticas</li>
+      <li>Truco rápido de Claude Code</li>
+      <li>Progreso del curso y nuevas lecciones</li>
+    </ul>
+  </div>
+</BaseLayout>

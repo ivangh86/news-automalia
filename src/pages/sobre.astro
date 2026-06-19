@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Sobre" description="Qué es The Claude Hub y cómo se selecciona el contenido.">
+  <div class="hero" style="margin-bottom:32px">
+    <div class="hero-label">Sobre</div>
+    <h1 style="font-size:clamp(2rem,5vw,3.5rem);margin:0 0 12px;color:#fff;letter-spacing:-0.05em">Qué es<br/><em>The Claude Hub</em></h1>
+    <p class="lead" style="margin:0">Un proyecto de <a href="https://automalia.ai">automalia.ai</a> para centralizar todo lo relevante sobre Claude, Claude Code y el ecosistema Anthropic.</p>
+  </div>
+
+  <div class="card-list">
+    <div class="card">
+      <div class="card-meta"><span class="tag">Misión</span></div>
+      <h3 style="margin:0 0 8px;color:#fff">Por qué existe este sitio</h3>
+      <p>Claude evoluciona rápido. Entre anuncios de Anthropic, actualizaciones de Claude Code, nuevos MCPs y cambios de modelo es fácil perderse. The Claude Hub filtra el ruido: solo lo que importa, explicado con contexto práctico.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-meta"><span class="tag">Contenido</span></div>
+      <h3 style="margin:0 0 8px;color:#fff">Qué encontrarás aquí</h3>
+      <ul style="color:#a3a3a3;line-height:1.8;margin:0;padding-left:20px">
+        <li><strong style="color:#e5e5e5">Noticias</strong> — Actualizaciones de Claude, Anthropic y el ecosistema</li>
+        <li><strong style="color:#e5e5e5">Tutoriales</strong> — Guías prácticas de Claude Code, MCPs y configuraciones</li>
+        <li><strong style="color:#e5e5e5">Curso</strong> — Aprendizaje progresivo desde cero hasta avanzado</li>
+        <li><strong style="color:#e5e5e5">Newsletter</strong> — Resumen semanal (próximamente)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-meta"><span class="tag">Criterio editorial</span></div>
+      <h3 style="margin:0 0 8px;color:#fff">Cómo se selecciona el contenido</h3>
+      <p>Todo el contenido se valida antes de publicar: debe ser práctico, verificable y aplicable. Sin especulación ni hype. Si no puedes usarlo hoy, no tiene cabida aquí.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-meta"><span class="tag">Tecnología</span></div>
+      <h3 style="margin:0 0 8px;color:#fff">Cómo está hecho</h3>
+      <p>Este sitio está construido con Astro y gestionado con Claude Code. El pipeline de contenido es automatizado: agentes especializados buscan, sintetizan y publican contenido diariamente. El propio sitio es un ejemplo de lo que puedes hacer con Claude.</p>
+      <ul class="chips" style="margin-top:12px">
+        <li class="chip">Astro</li>
+        <li class="chip">Claude Code</li>
+        <li class="chip">Hostinger Node.js</li>
+        <li class="chip">GitHub</li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>
